@@ -3,7 +3,6 @@ const bodyParser=require('body-parser');
 const sequelize =require('./util/database');
 const app=express();
 
-
 const expenseRoutes=require('./routes/expenseroute');
 const userRoutes=require('./routes/user');
 const purchaseRoutes=require('./routes/purchase');
@@ -17,10 +16,8 @@ const fileDownloadTabel=require('./model/filedownloaded');
 const helmet=require('helmet');
 const path = require('path');
 
-
 const morgan=require('morgan');
 const fs=require('fs');
-
 
 var cors=require('cors');
 const order = require('./model/orders');
