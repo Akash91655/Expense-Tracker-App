@@ -10,4 +10,5 @@ isactive:{
     type:Sequelize.BOOLEAN
 }
 })
+
 module.exports=forgot;
