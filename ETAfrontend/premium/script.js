@@ -4,8 +4,6 @@ function showTab(tabId) {
     tabContents.forEach((tabContent) => {
       tabContent.classList.remove('active');
     });
-  
-    // Show the selected tab content
     const selectedTab = document.getElementById(tabId);
     selectedTab.classList.add('active');
   }
