@@ -58,6 +58,7 @@ exports.resetPassword= async (req,res,next)=>{
         console.log(err);
     }
 }
+
 exports.updatepassword=async(req,res,next)=>{
     const t= await sequelize.transaction();
     const password=req.body.password;
