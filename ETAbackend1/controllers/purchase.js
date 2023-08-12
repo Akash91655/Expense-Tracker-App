@@ -23,6 +23,7 @@ exports.purchasePremium= async (req,res,next)=> {
         res.status(403).json({message:'something went wrong',error:err})
     }
 }
+
 exports.updateTransaction= async (req,res)=> {
     try{
         console.log('payment id=================='+req.body.payment_id);
