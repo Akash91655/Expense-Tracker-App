@@ -1,5 +1,3 @@
-//const { default: axios } = require("axios");
-
 document.addEventListener('submit',loginUser);
 const email=document.getElementById('email');
 const password=document.getElementById('password');
@@ -15,17 +13,11 @@ function loginUser(event){
             localStorage.setItem('token',res.data.token);
             localStorage.setItem('premium',res.data.premium);
             window.location.href='../ExpenseTracker.html';
-
-
         }
-        
     })
     .catch(err=>console.log(err));
-
-
 }
 document.getElementById('forgot').addEventListener('click',forgot);
 function forgot(){
     window.location.href='forgot.html';
-
 }
