@@ -7,17 +7,17 @@ exports.addexpense= async (req,res,next)=> {
     const t= await sequelize.transaction(); 
     try{
         const token=req.header('Authorization');
-    const amount=req.body.amount1;
-    const des=req.body.dis;
-    const category=req.body.category;
-    const user=jwt.verify(token,'758478734eeh48734894ye784788232hwi88y42');
-    const result=await expense.create(
-        {amount:amount,
-        description:des,
-        category:category,
-        userId:user.userId},
-     {transaction:t});
-    console.log(result);
+        const amount=req.body.amount1;
+        const des=req.body.dis;
+        const category=req.body.category;
+        const user=jwt.verify(token,'758478734eeh48734894ye784788232hwi88y42');
+        const result=await expense.create(
+            {amount:amount,
+            description:des,
+            category:category,
+            userId:user.userId},
+         {transaction:t});
+        console.log(result);
         const amountUser=await userTabel.findByPk(user.userId,{attributes:['totalamount']})
             console.log("amount user----"+amountUser.dataValues.totalamount);
             console.log('type==='+typeof amount);
