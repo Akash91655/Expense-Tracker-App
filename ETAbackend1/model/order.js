@@ -1,5 +1,6 @@
 const Sequelize=require('sequelize');
 const sequelize=require('../util/database');
+
 const order =sequelize.define('orders',{
     id:{
         type:Sequelize.INTEGER,
