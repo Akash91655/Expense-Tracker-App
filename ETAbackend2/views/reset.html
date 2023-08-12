@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color:rgb(244, 179, 111);
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgb(106, 170, 208);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(7, 7, 7, 0.2);
+      margin-top: 100px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      background-color: #49082d;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #500847;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reset Password</h1>
+        <form>
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" required>
+        <button type="submit">Reset Password</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script>
+    document.addEventListener('submit',callbackend);
+    async function callbackend(e){
+        const newpassword=document.getElementById('newPassword').value;
+        e.preventDefault();
+        console.log('indcsss post'+newpassword);
+        await axios.post('http://localhost:3000/password/updatepassword',{password:newpassword});
+    }
+    </script>
+</body>
+</html>
