@@ -1,5 +1,6 @@
 const jwt=require('jsonwebtoken');
 const User=require('../model/user');
+
 const authentication=(req,res,next)=> {
     console.log("in mid auth");
     const token=req.header('Authorization');
