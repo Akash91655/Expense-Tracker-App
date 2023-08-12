@@ -28,7 +28,6 @@ exports.addUser=async(req,res,next)=> {
 function generateAccessToken(id,pre){
     return token.sign({userId:id,ispremiumuser:pre},process.env.TOKEN_COMPARE);
 }
-
 exports.checkUser=(req,res,next)=> {
     console.log(req.body.email);
     user.findOne({where:{email:req.body.email} })
