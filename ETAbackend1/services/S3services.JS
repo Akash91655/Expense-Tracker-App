@@ -29,6 +29,4 @@ const uploadToS3=(data,fileName)=> {
         })
     })
 }
-module.exports={
-    uploadToS3
-}
+module.exports={ uploadToS3 }
