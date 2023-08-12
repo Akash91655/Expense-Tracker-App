@@ -1,5 +1,3 @@
-//document.getElementById('list').addEventListener('click',remove);
-
 let flag=0;
 let idtoedit=0;
 var list=document.querySelector('#list');
@@ -17,22 +15,17 @@ function add(e){
     console
     e.preventDefault();
     console.log("hi");
-    
-    //var li =document.createElement('li');
     let obj={
         amount1:amount.value,
         dis:description.value,
         category:cat.value
     }
-    //let myserial=JSON.stringify(obj);
     if(flag==1){
         flag=0;
         updateexpense(idtoedit,obj);
-
     }
     else{
         post(obj);
-
     }
 }
 function deleteexpense(id){
@@ -45,7 +38,6 @@ function deleteexpense(id){
     .then((result)=>console.log('deleted'))
     .catch((err)=>console.log(err));
 }
-
 function post( myserial){
     const token=localStorage.getItem('token');
     axios.post('http://localhost:3000/expense/postexpense',myserial,{headers:{"Authorization":token}})
@@ -67,7 +59,6 @@ function showUsersOnScreen(data){
     </tr>`;
     list.innerHTML=list.innerHTML+childHTML;
 }
-
 function editexpense(id,amount,description,category){
 document.querySelector('#amount').value=amount;
 document.querySelector('#des').value=description;
@@ -91,16 +82,13 @@ function at(){
     const dynamic=dynamicPagination.value;
     localStorage.setItem('dynamicPagination',dynamic);
 })
-
 if(premium=='true') {
     prebtn.classList.add('premium');
     const message=document.getElementById('premiumMessage');
     const div=document.getElementById('leader');
     message.innerText='You are a premium user';
     const button=`<button onclick="showleader()"class="bu" id="leaderboard">Show Leaderboard</button>`;
-    //document.getElementById('preexpenses').addEventListener('click',download);
-    //const showexpense=`<button onclick="showexpenses()"class="preex" id="preexpenses">Show expenses</button>`          
-    div.innerHTML=button;
+        div.innerHTML=button;
     axios.get('http://localhost:3000/premium/showfiledownloaded',{headers:{"Authorization":token}})
     .then((res)=> {
         const head=document.getElementById('filehead');
@@ -219,12 +207,10 @@ console.log(res);
 for(let i=0;i<res.data.user.length;i++) {
     showpagination(res.data.user[i]);
 }
-
 }
     catch(err){
         console.log(err);
     }
-    
 }
 function showpagination(data){
     const childHTML = `<tr id=${data.id}>
