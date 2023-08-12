@@ -20,6 +20,7 @@ app.use('/user',userRoutes);
 app.use('/premium',premiumRoutes);
 app.use('/expense',expenseRoutes);
 app.use('/purchase',purchaseRoutes);
+
 user.hasMany(expense,{constraints: true,onDelete:'CASCADE'});
 expense.belongsTo(user);
 user.hasMany(order,{constraints:true,onDelete:'CASCADE'});
