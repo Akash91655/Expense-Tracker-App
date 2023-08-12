@@ -1,6 +1,3 @@
-//const { default: axios } = require("axios");
-//const axios = require('axios');
-
 document.getElementById('btn').addEventListener('click',addUser);
 const name=document.getElementById('name');
 const email=document.getElementById('email');
@@ -21,19 +18,4 @@ function addUser(event){
         }
         console.log(err.response)
     });
-
-    //{ if(flag===1){
-    //  const para=document.getElementById('para');
-      //para.innerText='';
-      //flag=0;
-  
-     //}
-       // if(res.data.name==='SequelizeUniqueConstraintError'){
-      //flag=1;
-     // const para=document.getElementById('para');
-      //para.append('User already exist');
-      //};
-     //console.log(res);})
-     //.catch(err=>console.log(err));
-    
 } 
