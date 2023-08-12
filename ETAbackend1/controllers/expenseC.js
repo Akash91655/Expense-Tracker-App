@@ -91,6 +91,7 @@ exports.getexpense=(req,res,next)=> {
     })
     .catch(err=>console.log(err));
 }
+
 exports.download=async (req,res,next)=> {
     const t= await sequelize.transaction(); 
     try {
