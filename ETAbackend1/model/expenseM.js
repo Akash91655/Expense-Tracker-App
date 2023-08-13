@@ -21,4 +21,5 @@ const expense =sequelize.define('expenses',{
         allowNull:false
     }
 });
+
 module.exports=expense;
