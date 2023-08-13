@@ -88,6 +88,7 @@ function at(){
             })
         .catch(err=>console.log(err));
     }
+
 document.getElementById('premium').addEventListener('click', premiumPost);
  async function  premiumPost(){
     const token=localStorage.getItem('token');
