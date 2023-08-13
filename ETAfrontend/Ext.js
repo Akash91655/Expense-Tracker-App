@@ -4,6 +4,7 @@ var list=document.querySelector('#list');
 let amount=document.querySelector('#amount');
 let description=document.querySelector('#des');
 let cat=document.querySelector('#category');
+
 document.getElementById('Add').addEventListener('click',add);
  function add(e){
     console
